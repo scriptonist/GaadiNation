@@ -1,0 +1,5 @@
+<form method="post" action="{{ url_for('views.result') }}">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name(size=20) }}
+    <input type="submit" value="Go">
+</form>
