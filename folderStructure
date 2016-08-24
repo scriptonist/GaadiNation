@@ -1,0 +1,25 @@
+.
+├── app #----> Just a folder
+│   ├── configModule.cfg --- > file Contaiing Concfiguration Details for the flask app
+│   ├── __init__.py      ----> Direction for interpreter to treat this folder as a python Module
+│   ├── models.py        ----> Contains database related functions
+│   ├── 
+│   └── search           ----> Blueprint/module which deals with the search functionality
+│       ├── forms.py
+│       ├── __init__.py  ----> Treat Search as a Module
+│       ├── 
+│       ├── static       ----> Contains static files realated to search blueprint
+│       ├── templates    ----> Contains templates realated to search blueprint
+│       │   ├── form.html
+│       │   └── results.html
+│       └── views.py     ----> Views and routing for the search blueprint
+├── 
+├── requirements.txt     ----> List of required packages for the app
+├── runapp.py            ----> Python file to call the app.run() method
+└── tests                ----> Folder Containing Tests
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-34.pyc
+    │   └── tests.cpython-34.pyc
+    └── tests.py
+

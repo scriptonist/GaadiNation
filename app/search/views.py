@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect , request
+from flask import Blueprint, render_template, redirect, request
 from .forms import MyForm
 from app.models import find_by_car_name
 
@@ -9,13 +9,9 @@ submit = Blueprint("views", __name__, url_prefix='/search',
 @submit.route("/submit", methods=["POST", "GET"])
 def submit_form():
     form = MyForm()
+    content = None
     if form.validate_on_submit():
-        return redirect('/result')
-    return render_template('form.html', form=form)
+        content = find_by_car_name(request.form['name'])
+    return render_template('form.html', form=form, result=content)
 
-
-@submit.route("/result", methods=['POST'])
-def result():
-    return render_template("results.html", result=find_by_car_name(
-        request.form['name']))
 

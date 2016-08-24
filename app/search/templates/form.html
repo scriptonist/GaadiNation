@@ -1,5 +1,14 @@
-<form method="post" action="{{ url_for('views.result') }}">
+<form method="post" action="">
     {{ form.hidden_tag() }}
     {{ form.name.label }} {{ form.name(size=20) }}
     <input type="submit" value="Go">
+    {% if result is not none %}
+        <ol>
+            {% for item in result %}
+                <li>  {{ item['carname'] }} </li>
+            {%else%}
+                <p>No Results Found</p>
+            {% endfor %}
+        </ol>
+    {% endif %}
 </form>
