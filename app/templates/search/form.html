@@ -1,14 +1,24 @@
-<form method="post" action="">
+{% extends "base.html" %}
+{% block body %}
+<form method="post" action="" class="ui form">
     {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name(size=20) }}
+    
+    <div class="field">
+        {{ form.name(size=20,class='') }}
+    </div>
     <input type="submit" value="Go">
     {% if result is not none %}
-        <ol>
+        <h4 class="ui horizontal divider header">Results</h4>
+        <div class="ui segments">
+        <tbody>
             {% for item in result %}
-                <li>  {{ item['carname'] }} </li>
+                {# {% for key in item.keys() %} #}
+                <div class="ui green segment"> <p>{{ item['carname']}} </p> </div>
+                {# {% endfor %} #}
             {%else%}
                 <p>No Results Found</p>
             {% endfor %}
-        </ol>
+        </div>
     {% endif %}
 </form>
+{% endblock %}
