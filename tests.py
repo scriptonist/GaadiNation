@@ -3,6 +3,7 @@ import math,random
 from app import app
 from app import models
 from pymongo import MongoClient
+import time
 
 
 class test_app_search(unittest.TestCase):
@@ -52,8 +53,6 @@ class test_app_search(unittest.TestCase):
 
     def test_find_by_carname_returns_correct_results(self):
         """ Check if the models.py gives correct result on query """
-        #Import module to be tested
-        from app.models import find_by_car_name
         
         # -------------------Get a search String--------- #
         # a document is returned as a cursor from the get_random_document method
@@ -65,9 +64,11 @@ class test_app_search(unittest.TestCase):
         # the string is split with respect to spaces and checked for match
         search_string_list = search_string.split()
         for query in search_string_list:
-            result = find_by_car_name(query)
+            result = models.find_by_car_name(query)
             carname_list = [entry['carname'] for entry in result]
             self.assertIn(str(search_string), carname_list)
+            self.assertNotIn(str(search_string)+'x', carname_list)
+
 
 
 if __name__ == "__main__":
