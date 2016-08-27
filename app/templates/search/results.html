@@ -1,18 +1,25 @@
-{% extends 'base.html' %}
-{%block body %}
+{% extends 'base.html' %} {%block body %}
 <div class="ui container">
-    {% if result is not none %}
-        <h4 class="ui horizontal divider header">Results</h4>
-        <div class="ui segments">
-        <tbody>
-            {% for item in result %}
-                {# {% for key in item.keys() %} #}
-                <div class="ui segment"> <p>{{ item['carname']}} </p> </div>
-                {# {% endfor %} #}
-            {%else%}
-                <p>No Results Found</p>
-            {% endfor %}
+<div class="ui divided items">
+{% if result is not none %}
+    {% for r in result %}
+    <div class="item">
+        <div class="image">
+            <img src="{{r['image']}}">
         </div>
-    {% endif %}
+        <div class="content">
+            <a class="header">{{ r['carname']}}</a>
+            <div class="meta">
+                <span class="cinema">{{ r['Price']}}</span>
+            </div>
+            <div class="description">
+                <p></p>
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+{% endif %}
 </div>
-{% endblock %}
+</div>
+    {% endblock %}
