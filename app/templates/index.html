@@ -1,8 +1,30 @@
 {% extends "base.html" %}
+{%block head %}
+    <script src="{{ url_for('static',filename='js/jquery.easy-autocomplete.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/easy-autocomplete.min.css')}}"> 
+{%endblock %}
 {%block body %}
-    <div class="ui three item menu">
-      <a class="active item">Editorials</a>
-      <a class="item">Reviews</a>
-      <a class="item">Upcoming Events</a>
-    </div>
+<div class="ui two column centered grid">
+<div class="column">
+    <form class="ui form" action="{{ url_for('views.search_form')}}" method="post">
+        <div class="fields">
+        <div class='field'>
+            <input id="search_box_center_input"  name="search_query" type="text" placeholder="Type a car name">
+        </div>  
+        <div class="field">
+            <div class="ui vertical animated button" tabindex="0">
+              <div class="hidden content">search</div>
+              <div class="visible content">
+                <i class="search icon"></i>
+              </div>
+            </div>   
+        </div>
+        </div>
+
+    </form>
+</div>
+</div>
+<script src="{{ url_for('static',filename='js/main_page_search_box_ajax.js')}}"></script>
+
+
 {% endblock %}

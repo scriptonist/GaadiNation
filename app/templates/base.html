@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/semantic.min.css')}}">
+    <script src="{{ url_for('static',filename='js/jquery-3.1.0.min.js')}}"></script>
     <script src="{{ url_for('static',filename='js/semantic.min.js')}}"></script>
+   {% block head %}
+   {%endblock%}
 </head>
 <body>
-<div class="ui two column centered grid">
-        <div class='column'>
-        {% block body %}
-
-        {% endblock %}
+<div container>
+      <div class="ui stackable menu">
+          <div class="item">
+            <i class="car icon"></i>
+          </div>
+          <a class="item">Recommend Me a Car</a>
+          <a class="item">Compare Cars</a>
+          <a class="item">Show all Cars</a>
         </div>
+
+    {% block body %}
+
+    {% endblock %}
 </div>
+
 </body>
 </html>
