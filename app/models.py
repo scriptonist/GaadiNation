@@ -4,8 +4,8 @@ from pymongo import MongoClient
 
 
 def initDb():
-    db = MongoClient()[app.config['DB']]
-    collection = db[app.config['COLLECTION']]
+    db = MongoClient([app.config['MONGO_URI']])
+    collection = db[app.config['DB']][app.config['COLLECTION']]
     return(collection)
 
 
