@@ -1,25 +1,40 @@
 {% extends 'base.html' %} {%block body %}
-<div class="ui container">
-<div class="ui divided items">
-{% if result is not none %}
-    {% for r in result %}
-    <div class="item">
-        <div class="image">
-            <img src="{{r['image']}}">
-        </div>
-        <div class="content">
-            <a class="header">{{ r['carname']}}</a>
-            <div class="meta">
-                <span class="cinema">{{ r['Price']}}</span>
-            </div>
-            <div class="description">
-                <p></p>
-            </div>
-            
-        </div>
+
+<div  style="margin-top:2%" class="ui container">
+    <div class="ui two column centered grid">
+    <h2 class="ui header">
+      <i class="search icon"></i>
+      <div class="content">
+        Search Results
+      </div>
+    </h2>
     </div>
+{% if result is not none %}
+    <div style="margin-top:2%" class="ui link cards centered">
+    {% for r in result %}
+
+          <div class="card">
+            <!--<div class="image">-->
+                <a href="{{ url_for('views.get_car_details_by_name',carname=r['carname']) }}" class="image">
+                    <img src="{{ r['image'] }}">
+                </a>
+            <!--</div>-->
+            <div class="content">
+              <div class="header">{{ r['carname'] }}</div>
+              <div class="meta">
+                <p>{{ r['BodyType'] }}</p>
+              </div>
+              <div class="description">
+                Price - {{ r['Price'] }}
+              </div>
+            </div>
+
+          </div>
+
+
     {% endfor %}
+        </div>
 {% endif %}
 </div>
-</div>
+
     {% endblock %}

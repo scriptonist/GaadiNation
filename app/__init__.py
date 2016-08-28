@@ -12,6 +12,10 @@ app.register_blueprint(search)
 def index():
     return render_template("index.html",title="home")
 
+@app.errorhandler(404)
+def handle_404_error():
+    return render_template('404.html'),404
+
 
 @app.route("/test")
 def test_components():

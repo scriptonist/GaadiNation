@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block body %}
+<div style="margin-top:4%" class="contaner ">
+    <div class="ui two column centered grid">
+        <div class="column">
+            <div class="ui header">{{ details['carname'] }}</div>
+            <div class="ui divider"></div>
+            <div class="ui items">
+              <div class="item">
+                <div class="image">
+                  <img src="{{details['image']}}">
+                </div>
+                <div class="content">
+                  <a class="header">Price</a>
+                  <div class="meta">
+                    <span>{{ details['Price'] }}</span>
+                  </div>
+                  <div class="description">
+                    <p></p>
+                  </div>
+                  <div class="extra">
+                    {{ details['BodyType'] }}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+<h4 class="ui horizontal divider header">
+  <i class="bar chart icon"></i>
+  Specifications
+</h4>
+<table class="ui definition table">
+  <tbody>
+    <tr>
+      <td class="two wide column">Fuel Type</td>
+      <td>{{ details['FuelType'] }}</td>
+    </tr>
+    <tr>
+      <td class="two wide column">Mileage</td>
+      <td>{{ details['Mileage'] }}</td>
+    </tr>
+    <tr>
+      <td>Fuel Tank Capacity</td>
+      <td>{{ details['FuelTankCapacity'] }}</td>
+    </tr>
+    <tr>
+      <td>Air Conditioner</td>
+      <td>{{ details['AirConditioner'] }}</td>
+    </tr>
+    <tr>
+      <td>Power Steering</td>
+      <td>{{ details['PowerSteering'] }}</td>
+    </tr>
+    <tr>
+      <td>Max Power</td>
+      <td>{{ details['MaxPower'] }}</td>
+    </tr>
+    <tr>
+      <td>Ground Clearance</td>
+      <td>{{ details['GroundClearance'] }}</td>
+    </tr>
+    <tr>
+      <td>Seating Capacity</td>
+      <td>{{ details['SeatCapacity'] }}</td>
+    </tr>
+    <tr>
+      <td>Front Brakes</td>
+      <td><p>{{ details['FrontBrakes'] }}</p></td>
+    </tr>
+    <tr>
+      <td>BootSpace</td>
+      <td>{{ details['BootSpace'] }}</td>
+    </tr>
+    <tr>
+      <td>MaxTorque</td>
+      <td>{{ details['MaxTorque'] }}</td>
+    </tr>
+    <tr>
+      <td>Power Windows</td>
+      <td>{{ details['PowerWindows'] }}</td>
+    </tr>
+    <tr>
+      <td>Front Suspension</td>
+      <td>{{ details['FrontSuspension'] }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+    </div>
+
+{% endblock %}
