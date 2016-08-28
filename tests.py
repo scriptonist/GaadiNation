@@ -25,7 +25,7 @@ class test_app_search(unittest.TestCase):
         self.connection.drop_database(app.config['DB'])
 
         # Initialise collection variable with app config and create index
-        self.collection = models.initDb()
+        self.collection = models.init_db()
         self.collection.create_index([("carname","text")])
 
         # Insert the data in original database to test_database
@@ -51,7 +51,7 @@ class test_app_search(unittest.TestCase):
         document = self.collection.find().limit(1).skip(R)
         return document
 
-    def test_find_by_carname_returns_correct_results(self):
+    def test_search_by_carname_returns_correct_results(self):
         """ Check if the models.py gives correct result on query """
         
         # -------------------Get a search String--------- #
@@ -68,6 +68,21 @@ class test_app_search(unittest.TestCase):
             carname_list = [entry['carname'] for entry in result]
             self.assertIn(str(search_string), carname_list)
             self.assertNotIn(str(search_string)+'x', carname_list)
+
+    def test_fetch_car_details_of_a_car_give_correct_results(self):
+        """
+        Check if the models.py get_details_of_car(carname) return
+         correct Results
+        """
+        # Get a Carname from the DB
+        carname = [document for document in self.get_random_document()][0]['carname']
+        result = models.get_details_of_car(carname)
+        # Check if returned value is a dictionary
+        self.assertEqual(True,isinstance(result,dict))
+        # Check if the query returned the correct car results
+        self.assertEqual(carname,result['carname'])
+        # Check id the query evaluates to wrong
+        self.assertNotEqual(carname+'x',result['carname'])
 
 
 
