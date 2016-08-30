@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, request,jsonify
 from app.models import find_by_car_name,get_details_of_car
 import json
 
-search = Blueprint("views", __name__, url_prefix='/search')
+search = Blueprint("search", __name__, url_prefix='/search')
 
 # The view function returning the results for a search query
 

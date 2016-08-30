@@ -10,8 +10,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/semantic.min.css')}}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css')}}">
-    <script src="{{ url_for('static',filename='js/jquery-3.1.0.min.js')}}"></script>
-    <script src="{{ url_for('static',filename='js/semantic.min.js')}}"></script>
+
    {% block head %}
    {%endblock%}
 </head>
@@ -27,7 +26,7 @@
           <div class="right menu">
             <div class="item">
               <div class="ui transparent icon input">
-                  <form action="{{url_for('views.search_form')}}" method="post">
+                  <form action="{{url_for('search.search_form')}}" method="post">
                     <input name="search_query" placeholder="type a car name" type="text">
                     <i class="search link icon"></i>
                   </form>
@@ -41,6 +40,7 @@
 
     {% endblock %}
 </div>
-
+<script src="{{ url_for('static',filename='js/jquery-3.1.0.min.js')}}"></script>
+<script src="{{ url_for('static',filename='js/semantic.min.js')}}"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 {%block body %}
 <div class="ui two column centered grid">
 <div class="column">
-    <form class="ui form" action="{{ url_for('views.search_form')}}" method="post">
+    <form class="ui form" action="{{ url_for('search.search_form')}}" method="post">
         <div class="fields">
         <div class='field'>
             <input id="search_box_center_input"  name="search_query" type="text" placeholder="Type a car name">

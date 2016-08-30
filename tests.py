@@ -3,7 +3,6 @@ import math,random
 from app import app
 from app import models
 from pymongo import MongoClient
-import time
 
 
 class test_app_search(unittest.TestCase):

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div style='margin-top:2%' class="ui two column centered grid middle aligned    ">
+  <div class="column">
+       <h3 style=" font-family: 'Open Sans Condensed', sans-serif; "class="ui center aligned icon header">
+       <i class="circular car icon"></i>
+         <button class="fluid large ui animated button" onclick="window.location='{{ url_for('recomendation.steps') }}'">
+             <div class="visible content">Find Your Dream Car In 3 Easy Steps</div>
+             <div class="hidden content">
+                Yes Find it Now
+             </div>
+         </button>
+
+    </h3>
+  </div>
+
+</div>
+
+
+{% endblock %}
