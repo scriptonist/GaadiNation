@@ -44,6 +44,13 @@ def filter_car_by_mileage(mileage):
     return res
 
 def filter_by_many_values_perfect(conditions=[]):
+    """
+    Execute a $and query with the conditions as the argument
+    it returns a cursor which follows conditions according to
+    the module
+    :param conditions:
+    :return a cursor with data:
+    """
     collection = init_db()
     if not conditions:
         return collection.find()
@@ -51,10 +58,7 @@ def filter_by_many_values_perfect(conditions=[]):
         res = collection.find({"$and": conditions})
         return res
 
-r = filter_by_many_values_perfect([{"BodyType":"Hatchback"}])
 
-for e in r:
-    print(e['carname'])
 
 
 

@@ -10,8 +10,13 @@ app.register_blueprint(search)
 app.register_blueprint(recomendation)
 
 @app.route("/")
-def index():
-    return render_template("index.html",title="home")
+def landing():
+    return render_template("landing.html",title="home")
+
+@app.route("/home")
+def home():
+    return render_template("home.html",title="home")
+
 
 @app.errorhandler(404)
 def handle_404_error(e):
