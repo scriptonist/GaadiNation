@@ -5,9 +5,11 @@ app.config.from_pyfile('configModule.cfg')
 
 from .search.views import search
 from .recomendation.views import recomendation
+from .compare.views import compare
 
 app.register_blueprint(search)
 app.register_blueprint(recomendation)
+app.register_blueprint(compare)
 
 @app.route("/")
 def landing():

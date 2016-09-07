@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <!-- Title Of Page -->
+            <title>GaadiNation</title>
+            
+            <!-- Font Styles -->
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway" rel="stylesheet">
+            
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        
+            <!-- Animation Css -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
+            <!--Let browser know website is optimized for mobile -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+            <!-- Icons Css -->
+            <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            
+            <!-- Jquery Library -->
+            <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+            
+    </head>
+    <body>
+        
+        <!-- Top NavBar -->
+        <div>
+            <nav>
+                <div class="navbar-fixed blue-grey darken-4">
+                    <a href="" class="brand-logo center" style="font-family:Alegreya Sans SC;font-size:58px;">Gaadi<span style="color:#43C6DB";>Nation</span></a>
+                        <ul id="nav-mobile"  class="left hide-on-med-and-down">
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">COMPARE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">LOCATE</a></b></li>
+                        </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Of NavBar-->
+        
+        <!-- Specifications Display -->
+        <!-- Car Image and Short Specification-->
+         <div class="row" style="margin-top:5%;">
+            <div class="center-align">
+               <h5 style="font-family:Alegreya Sans SC;font-size:40px;">Maruti Celerio</h5>
+            </div>
+        </div>
+        <div class="row" style="margin-top:3%;">
+            <div class="col s5 m6">
+                <div class="card small z-depth-0">
+                    <div class="card-image" style="max-height:500px;max-width: 500px;">
+                        <img src="../static/images/carfind3.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col s2 m3" style="margin-top:4%;margin-left:0%;">
+                <div class="card z-depth-0">
+                    <table class="highlight responsive-table" style="margin-right:">
+                        <tbody>
+                            <tr>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Price</b></td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Body Type</b></td>
+                            </tr>
+                            <tr>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Mileage</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End Of Short Specification-->
+        <!-- Extra Specifications -->
+        <div class="row">
+            <div class="center-align">
+               <h5 style="font-family:Alegreya Sans SC;font-size:40px;">Detailed Specifications</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s8 m5" style="margin-left:28%;">
+                <div class="card">
+                    <table class="centered bordered striped highlight responsive-table" style="margin-right:">
+                        <tbody>
+                            <tr>
+                                <td>Price</td>
+                                <td>2 Lakh</td>
+                            </tr>
+                            <tr>
+                                <td>Engine</td>
+                                <td>1500cc</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      <!-- Jquery Of Materialise -->
+           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+           <script>
+            
+              $(document).ready(function(){
+                $('.parallax').parallax();
+                $('.carousel.carousel-slider').carousel({full_width: true});
+            });
+
+             $(document).ready(function(){
+                $('.slider').slider({
+                    indicators: false,
+                    full_width: true,
+                    height: 500});
+            });
+            
+            $(document).ready(function(){
+                $('.scrollspy').scrollSpy();
+            });
+               
+            $( document ).ready(function(){
+                $(".button-collapse").sideNav();
+            });
+            
+            $(document).ready(function(){
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+               
+           </script>
+    </body>
+</html>

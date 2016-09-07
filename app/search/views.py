@@ -18,7 +18,7 @@ def search_form():
     """
     if request.method == 'POST':
         content = find_by_car_name(request.form['search_query'])
-        return render_template('search/results.html', result=content,
+        return render_template('search/searchresult.html', result=content,
                                title="Search")
     else:
         return render_template('index.html')

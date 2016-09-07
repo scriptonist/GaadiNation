@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compare Cars</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">GaadiNation</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Recomend</a></li>
+                    <li><a href="#">Compare</a></li>
+                    <li><a href="#">Search</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br>
+    <div class="container">
+        <!-- Page Content goes here -->
+        <div class="row section">
+        {%for car in cars %}
+            <div class="col s{{number}}">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="{{car['image']}}">
+                  </div>
+                  <div class="card-content">
+                      <ul>
+                        
+                        {% for k in car.keys() %}
+                          <li>
+                            {{ k }} : {{car[k]}}
+                          </li>
+                          <hr>
+                        {% endfor %}
+                        
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        {%endfor%}
+        </div>
+    </div>
+</body>
+
+</html>

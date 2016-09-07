@@ -36,9 +36,9 @@
                             <h1 style="font-family:Alegreya Sans SC;font-size:110px;margin-left:5%;margin-top:0%;">Gaadi<span style="color:#43C6DB";>Nation</span></h1>
                                  <nav class="white darken-2 center-align" style="width: 49%;margin-left:3%;margin-top:-2%;">
                                     <div class="nav-wrapper" >
-        			                     <form method="post" action="">
+        			                     <form method="post" action="{{url_for('search.search_form')}}">
             			                     <div class="input-field center-align z-depth-0" style="100%;">
-                			                     <input id="search" type="search" placeholder="Search Your Car" name="search_query" required />
+                			                     <input id="search_box_center_input" type="search" placeholder="Search Your Car" name="search_query" required />
                 			                         <label for="search"><i class="material-icons black-text text-darken-4">search</i></label>
                 			                             <i class="material-icons black-text text-darken-4">close</i>
             			                     </div>
@@ -201,6 +201,7 @@
 
             <!-- Jquery Of Materialise -->
            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
            <script>
 
               $(document).ready(function(){
