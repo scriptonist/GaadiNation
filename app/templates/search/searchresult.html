@@ -376,87 +376,21 @@
     <!-- End Of Seat Capacity Filter -->            
         </div>
         <!-- CARD RESULTS -->
-
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/1.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
-        </div>
-    </div>
-</div>    
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/2.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
+{% for car in result %}
+    <div class="col s11 m3">
+        <div class="card large">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{ car['image'] }}">
+            </div>
+            <div class="card-content" >
+                <span class="card-title activator grey-text text-darken-4"><h5>{{ car['carname'] }}</h5><h6>{{ car['Price'] }}</h6></span>
+                <p>Fuel Type: {{ car['FuelType'] }}<br>Seat Capacity: {{ car['SeatCapacity'] }}</p>
+                <input type="checkbox" id="test22" value="" >
+                <label for="test22"><h6>Add to Compare</h6></label>
+            </div>
         </div>
     </div>
-</div>       
-  
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/3.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
-        </div>
-    </div>
-</div>
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/1.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
-        </div>
-    </div>
-</div>    
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/2.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
-        </div>
-    </div>
-</div>       
-  
-<div class="col s11 m3">
-    <div class="card large">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../static/images/3.jpg">
-        </div>
-        <div class="card-content" >
-            <span class="card-title activator grey-text text-darken-4"><h5>Maruti Alto</h5><h6>&#8377;5Lakh</h6></span>
-            <p>Fuel Type: Petrol<br>Seat Capacity: 5</p>
-            <input type="checkbox" id="test22" value="" >
-            <label for="test22"><h6>Add to Compare</h6></label>
-        </div>
-    </div>
-</div>
+{% endfor %}
 
     <!-- END OF CARD RESULTS-->
     </div>
