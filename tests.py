@@ -70,8 +70,9 @@ class test_app_search(unittest.TestCase):
 
     def test_fetch_car_details_of_a_car_give_correct_results(self):
         """
-        Check if the models.py get_details_of_car(carname) return
+        Check if the  models.py file get_details_of_car(carname) return
          correct Results
+	 
         """
         # Get a Carname from the DB
         carname = [document for document in self.get_random_document()][0]['carname']
