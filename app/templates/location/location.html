@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <!-- Title Of Page -->
+            <title>GaadiNation</title>
+            
+            <!-- Font Styles -->
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway" rel="stylesheet">
+            
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        
+            <!-- Animation Css -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
+            <!--Let browser know website is optimized for mobile -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+            <!-- Icons Css -->
+            <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            
+            <!-- Jquery Library -->
+            <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+            
+    </head>
+    <body >
+        <!-- Top NavBar -->
+        <div>
+            <nav>
+                <div class="navbar-fixed blue-grey darken-3">
+                    <a href="home" class="brand-logo center" style="font-family:Alegreya Sans SC;font-size:58px;">Gaadi<span style="color:#43C6DB";>Nation</span></a>
+                        <ul id="nav-mobile"  class="left hide-on-med-and-down">
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="findresult.html">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">COMPARE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="location.html">LOCATE</a></b></li>
+                        </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- End Of NavBar-->
+        <div class="row">
+                 <div class="row">
+                    <div class="col s11 m3 center-align" style="margin-left:37%;margin-top:2%;">
+                         <h4 class="collapsible-header"><span style="font-family:Alegreya Sans SC;">Locate Dealers</span></h4>
+                    </div>
+                </div>
+            </div>
+        <!-- Card For Choosing the Brand and Location-->
+        <div class="row">
+            <div class="col s10 m3" style="margin-top: 1%;">
+                <div class=" card white">
+                    <div class="card-content black-text">
+                                <input type="text" id="autocomplete-input" class="autocomplete" placeholder="Type Your Location">
+                                <label for="autocomplete-input"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End Of Choosing Brand and Location-->
+            <div class="col s9" style="margin-top: 1%;">
+                <div class="card z-depth-2">
+                    <div class="card-content black-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Of Page -->
+            <footer class="page-footer blue-grey darken-3" style="margin-top:37%;">
+                <div class="footer-copyright">
+                    <div class="container ">
+                        <h5 style="font-family:Alegreya Sans SC;"><center>&#169; 2016 GaadiNation, All rights reserved</center></h5>
+                            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    </div>
+                </div>
+            </footer>
+        <!-- Jquery Of Materialise -->
+           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+           <script>
+            
+              $(document).ready(function(){
+                $('.parallax').parallax();
+                $('.carousel.carousel-slider').carousel({full_width: true});
+            });
+
+             $(document).ready(function(){
+                $('.slider').slider({
+                    indicators: false,
+                    full_width: true,
+                    height: 500});
+            });
+            
+            $(document).ready(function(){
+                $('.scrollspy').scrollSpy();
+            });
+               
+            $(document).ready(function(){   
+            $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: false, // Does not change width of dropdown to that of the activator
+                hover: true, // Activate on hover
+                gutter: 0, // Spacing from edge
+                belowOrigin: false, // Displays dropdown below the button
+                alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                }
+            );
+            });
+            $(document).ready(function(){   
+            $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrain_width: false, // Does not change width of dropdown to that of the activator
+                hover: true, // Activate on hover
+                gutter: 0, // Spacing from edge
+                belowOrigin: false, // Displays dropdown below the button
+                alignment: 'left' // Displays dropdown with edge aligned to the left of button
+                }
+            );
+            });
+               
+            $(document).ready(function(){   
+                $('input.autocomplete').autocomplete({
+                    data: {
+                            "Kerala": null,
+                            "Delhi": null,
+                            "Mumbai": 'http://placehold.it/250x250'
+                    }
+                });
+            });
+        
+           </script>
+    </body>
+</html>
