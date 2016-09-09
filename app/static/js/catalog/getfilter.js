@@ -1,5 +1,7 @@
 $(document).ready(function(){
+    var filtert = {"cars":[]};
     $('input:checkbox').click(function(){
-        console.log("test");
+        var id = $(this).attr('id');
+        console.log(id);
     });
 });
