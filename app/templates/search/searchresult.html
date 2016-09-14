@@ -35,32 +35,33 @@
                     <a href="../templates/home" class="brand-logo center" style="font-family:Alegreya Sans SC;font-size:58px;">Gaadi<span style="color:#43C6DB";>Nation</span></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul id="nav-mobile"  class="left hide-on-med-and-down">
-                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">FIND</a></b></li>
-                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">COMPARE</a></b></li>
-                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">LOCATE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/home">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/compare">COMPARE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/locate">LOCATE</a></b></li>
                         </ul>
     			 </div>
                          <ul id="mobile-demo"  class="side-nav">
-                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/">FIND</a></b></li>
                             <li style="font-family:Raleway;font-size:50px;"><b><a href="">COMPARE</a></b></li>
                             <li style="font-family:Raleway;font-size:50px;"><b><a href="">LOCATE</a></b></li>
                         </ul>
-                        <form method="post" action="">
+                        <form method="post" action="{{url_for('search.search_form')}}">
             			     <div class="input-field center-align z-depth-0" style="width:18%;margin-top:3%">
                 			     <input id="search_query" type="search" placeholder="Search Your Car" name="search_query" required />
                 			         <label for="search_query"><i class="material-icons black-text text-darken-4">search</i></label>
             			     </div>
-            	       </form>    
+            	       </form>
                 </div>
             </nav>
         </div>
         <!-- End Of NavBar-->
         <h5 class="header align center">Results</h5>
+        <div class="container">
         <div class="row">
         <!-- CARD RESULTS -->
 {% for car in result %}
             <a href="{{ url_for('search.get_car_details_by_name',carname=car['carname']) }}">
-    <div class="col s6 m3">
+    <div class="col s4 m6">
         <div class="card large">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="{{ car['image'] }}">
@@ -72,12 +73,16 @@
                 <label for="test22"><h6>Add to Compare</h6></label>
             </div>
         </div>
-                </a>
+
 
     </div>
+                 </a>
+
+
 {% endfor %}
 
     <!-- END OF CARD RESULTS-->
+             </div>
     </div>
         
 
