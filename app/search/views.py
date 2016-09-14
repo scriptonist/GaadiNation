@@ -21,7 +21,7 @@ def search_form():
         return render_template('search/searchresult.html', result=content,
                                title="Search")
     else:
-        return render_template('index.html')
+        return render_template('404.html')
 
 
 # Ajax Request handler for the search box in landing page

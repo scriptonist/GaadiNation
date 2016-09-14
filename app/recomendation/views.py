@@ -6,6 +6,9 @@ recomendation = Blueprint("recomendation", __name__, url_prefix='/recomendation'
 def recomendation_steps():
     return render_template("recomendation/find.html")
 
-@recomendation.route('/result')
+@recomendation.route('/result',methods=["POST","GET"])
 def recomendation_result():
-    return render_template("recomendation/findresult.html")
+    if request.methos == "POST":
+        return render_template("recomendation/findresult.html")
+    else:
+        return render_template('404.html')
