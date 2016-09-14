@@ -58,6 +58,6 @@ def get_car_details_by_name(carname=None):
     """
     if carname is not None:
         details = get_details_of_car(carname)
-        return render_template("search/cardetails.html",details=details,found=True)
+        return render_template("search/searchspec.html",details=details,found=True)
     else:
-        return render_template("search/cardetails.html", found=False)
+        return render_template("search/searchspec.html", found=False)

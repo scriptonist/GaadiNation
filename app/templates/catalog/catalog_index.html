@@ -273,7 +273,7 @@
                     </div>
             <!-- Inside Modal-Apply Button-->
             <div class="modal-footer" >
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" style="font-family:Raleway;margin-left: 2%;">Apply</a>
+                <button id="apply_filter" class=" modal-action modal-close waves-effect waves-green btn-flat" style="font-family:Raleway;margin-left: 2%;">Apply</button>
             </div>
         </div>
         <!-- End Of Modal Of Brand Filter -->
@@ -376,6 +376,7 @@
     <!-- End Of Seat Capacity Filter -->            
         </div>
         <!-- CARD RESULTS -->
+        <div class="results">
 {% for car in result %}
     <div class="col s11 m3">
         <div class="card large">
@@ -391,13 +392,14 @@
         </div>
     </div>
 {% endfor %}
+            </div>
 
     <!-- END OF CARD RESULTS-->
     </div>
         
     <!-- Inside Modal-Apply Button-->
             <div class="modal-footer" style="font-family:Raleway;">
-                <a href="#!" class=" waves-effect waves-light btn modal-trigger blue-grey darken-3 z-depth-0" style="margin-left:2%;">APPLY</a>
+                <button id="apply_filter1" class=" waves-effect waves-light btn modal-trigger blue-grey darken-3 z-depth-0" style="margin-left:2%;">APPLY</button>
             </div>
         </div>
         <!-- End Of Modal Of Brand Filter -->

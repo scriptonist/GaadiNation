@@ -46,14 +46,14 @@
         <!-- Car Image and Short Specification-->
          <div class="row" style="margin-top:5%;">
             <div class="center-align">
-               <h5 style="font-family:Alegreya Sans SC;font-size:40px;">Maruti Celerio</h5>
+               <h5 style="font-family:Alegreya Sans SC;font-size:40px;">{{details['carname'] }}</h5>
             </div>
         </div>
         <div class="row" style="margin-top:3%;">
             <div class="col s5 m6">
                 <div class="card small z-depth-0">
                     <div class="card-image" style="max-height:500px;max-width: 500px;">
-                        <img src="../static/images/carfind3.jpg">
+                        <img src="{{ details['image'] }}">
                     </div>
                 </div>
             </div>
@@ -62,13 +62,13 @@
                     <table class="highlight responsive-table" style="margin-right:">
                         <tbody>
                             <tr>
-                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Price</b></td>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Price: {{ details['Price'] }} </b></td>
                             </tr>
                             <tr>
-                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Body Type</b></td>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Body Type: {{ details['BodyType'] }} </b></td>
                             </tr>
                             <tr>
-                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Mileage</b></td>
+                                <td style="font-family:Alegreya Sans SC;font-size:20px;"><b>Mileage: {{ details['Mileage'] }} Kmpl</b></td>
                             </tr>
                         </tbody>
                     </table>
@@ -89,11 +89,67 @@
                         <tbody>
                             <tr>
                                 <td>Price</td>
-                                <td>2 Lakh</td>
+                                <td>{{ details['Price'] }}</td>
                             </tr>
                             <tr>
-                                <td>Engine</td>
-                                <td>1500cc</td>
+                                <td>Displacement</td>
+                                <td>{{ details['Displacement']}} </td>
+                            </tr>
+                         <tr>
+                                <td>FuelTankCapacity</td>
+                                <td>{{ details['FuelTankCapacity']}}</td>
+                            </tr>
+                         <tr>
+                                <td>Gearbox</td>
+                                <td>{{ details['Gearbox']}}</td>
+                            </tr>
+                        <tr>
+                                <td>FrontBrakes</td>
+                                <td>{{ details['FrontBrakes']}}</td>
+                            </tr>
+                         <tr>
+                                <td>FuelType</td>
+                                <td>{{ details['FuelType']}}</td>
+                            </tr>
+                        <tr>
+                                <td>AirConditioner</td>
+                                <td>{{ details['AirConditioner']}}</td>
+                            </tr>
+                         <tr>
+                                <td>Bootspace</td>
+                                <td>{{ details['Bootspace']}}</td>
+                            </tr>
+                         <tr>
+                                <td>GroundClearance</td>
+                                <td>{{ details['GroundClearance']}}</td>
+                            </tr>
+                         <tr>
+                                <td>PowerWindows</td>
+                                <td>{{ details['PowerWindows']}}</td>
+                            </tr>
+                        <tr>
+                                <td>MaxPower</td>
+                                <td>{{ details['MaxPower']}}</td>
+                            </tr>
+                        <tr>
+                                <td>MaxTorque</td>
+                                <td>{{ details['MaxTorque']}}</td>
+                            </tr>
+                         <tr>
+                                <td>RearBrakes</td>
+                                <td>{{ details['RearBrakes']}}</td>
+                            </tr>
+                        <tr>
+                                <td>PowerSteering</td>
+                                <td>{{ details['PowerSteering']}}</td>
+                            </tr>
+                         <tr>
+                                <td>SeatCapacity</td>
+                                <td>{{ details['SeatCapacity']}}</td>
+                            </tr>
+                        <tr>
+                                <td>RearSuspension</td>
+                                <td>{{ details['RearSuspension']}}</td>
                             </tr>
                         </tbody>
                     </table>
