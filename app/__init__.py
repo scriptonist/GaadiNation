@@ -7,11 +7,14 @@ from .search.views import search
 from .recomendation.views import recomendation
 from .compare.views import compare
 from .catalog.views import catalog
+from .location.views import location
+
 
 app.register_blueprint(search)
 app.register_blueprint(recomendation)
 app.register_blueprint(compare)
 app.register_blueprint(catalog)
+app.register_blueprint(location)
 
 
 @app.route("/")

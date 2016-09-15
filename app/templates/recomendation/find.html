@@ -12,7 +12,7 @@
 	</head>
 	<body>
 			<section>
-				<form class="ac-custom ac-radio ac-fill" autocomplete="off">
+				<form method='post' class="ac-custom ac-radio ac-fill" autocomplete="off" action="{{ url_for('recomendation.recomendation_result') }}">
                     <section>
 					<h2>What's your budget?</h2>
 					<ul>
@@ -46,10 +46,10 @@
 						<li><input id="r11" name="r4" type="radio"><label for="r11"><font color="white">Occasionally</font></label></li>
 				   </ul>
                    </section>
-				</form>
+
 			</section>
         <center><button class="fs-submit" type="submit">Find Car</button></center>
-
+        </form>
 		</div><!-- /container -->
 
 		<script src="../static/js/svgcheckbx.js"></script>

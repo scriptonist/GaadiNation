@@ -1,4 +1,4 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template,request
 
 recomendation = Blueprint("recomendation", __name__, url_prefix='/recomendation')
 
@@ -8,7 +8,7 @@ def recomendation_steps():
 
 @recomendation.route('/result',methods=["POST","GET"])
 def recomendation_result():
-    if request.methos == "POST":
-        return render_template("recomendation/findresult.html")
+    if request.method == "POST":
+        return render_template("recomendation/findresult.html",form=request.form)
     else:
         return render_template('404.html')

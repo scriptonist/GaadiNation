@@ -246,7 +246,7 @@
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */ (
                 document.getElementById('autocomplete')), {
-              types: ['(cities)'],
+              types: ['(car_dealer)(car_repair)'],
               componentRestrictions: countryRestrict
             });
         places = new google.maps.places.PlacesService(map);
@@ -432,7 +432,7 @@
         }
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PSY8gVhmCygadE7G_mfBncdvAr0U0nU&libraries=places&callback=initMap"
         async defer></script>
   </body>
 </html>
