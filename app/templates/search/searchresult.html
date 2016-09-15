@@ -26,6 +26,9 @@
             <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
             
     </head>
+    <style>
+       
+    </style>
     <body>
         
         <!-- Top NavBar -->
@@ -61,8 +64,8 @@
         <!-- CARD RESULTS -->
 {% for car in result %}
             
-    <div class="col s4 m3">
-        <div class="card">
+    <div class="col s4 m4" >
+        <div class="card large">
             <div class="card-image waves-effect waves-block waves-light">
                 <a href="{{ url_for('search.get_car_details_by_name',carname=car['carname']) }}"><img class="activator" src="{{ car['image'] }}"></a>
             </div>
@@ -80,6 +83,7 @@
 
 
 {% endfor %}
+</div>
     <div class="fixed-action-btn" style="bottom:45px;left:24px;">
         
         <button id="compareButton" class="btn-floating btn-large">

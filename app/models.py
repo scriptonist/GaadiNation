@@ -23,14 +23,17 @@ def find_by_car_name(name):
 def get_details_of_car(carname):
     """ Get Details about a car by the carname """
     collection = init_db()
-    res = collection.find_one({"carname":carname})
+    res = collection.find_one({"carname": carname})
     return dict(res)
 
-def filter_car_by_price(end_price,start_price=0):
+
+def filter_car_by_price(end_price, start_price=0):
     """ Function to Filter Cars withing a budget"""
     collection = init_db()
-    res = collection.find({"$and":[{"start_price":{'$gte':start_price}},{"end_price":{'$lt':end_price}}]})
+    res = collection.find({"$and": [{"start_price": {'$gte': start_price}}, {
+                          "end_price": {'$lt': end_price}}]})
     return res
+
 
 def filter_car_by_mileage(mileage):
     """
@@ -40,8 +43,9 @@ def filter_car_by_mileage(mileage):
     :return: Cursor of mileage greter than mileage
     """
     collection = init_db()
-    res = collection.find({'Mileage':{"$gte":mileage}})
+    res = collection.find({'Mileage': {"$gte": mileage}})
     return res
+
 
 def filter_by_many_values_perfect(conditions=[]):
     """
@@ -57,8 +61,10 @@ def filter_by_many_values_perfect(conditions=[]):
     else:
         res = collection.find({"$and": conditions})
         return res
+
+
 def getmanufacturer():
-    mname=[]
+    mname = []
     collection = init_db()
     res = collection.find({}, {'carname': 1, '_id': 0})
     for i in res:
@@ -67,21 +73,18 @@ def getmanufacturer():
 
 
 def getcars(brand):
-    collection=init_db()
-    res1 = collection.find({"$text":{"$search":brand}},{'carname': 1,'_id':0})
+    collection = init_db()
+    res1 = collection.find({"$text": {"$search": brand}}, {
+                           'carname': 1, '_id': 0})
     cars = []
     for i in res1:
         cars.append(i['carname'])
     return cars
 
+
 def getcardetails(carname):
     collection = init_db()
-    res=collection.find_one({"carname":carname})
-    if(res==None):
-        res={}
+    res = collection.find_one({"carname": carname})
+    if(res == None):
+        res = {}
     return res
-
-
-
-
-
