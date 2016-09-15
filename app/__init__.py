@@ -31,6 +31,10 @@ def home():
 def handle_404_error(e):
     return render_template('404.html'), 404
 
+@app.errorhandler(404)
+def handle_500_error(e):
+    return render_template('500.html'), 404
+
 
 @app.route("/test")
 def test_components():
