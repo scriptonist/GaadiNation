@@ -57,7 +57,29 @@ def filter_by_many_values_perfect(conditions=[]):
     else:
         res = collection.find({"$and": conditions})
         return res
+def getmanufacturer():
+    mname=[]
+    collection = init_db()
+    res = collection.find({}, {'carname': 1, '_id': 0})
+    for i in res:
+        mname.append(i['carname'].split()[0])
+    return set(list(mname))
 
+
+def getcars(brand):
+    collection=init_db()
+    res1 = collection.find({"$text":{"$search":brand}},{'carname': 1,'_id':0})
+    cars = []
+    for i in res1:
+        cars.append(i['carname'])
+    return cars
+
+def getcardetails(carname):
+    collection = init_db()
+    res=collection.find_one({"carname":carname})
+    if(res==None):
+        res={}
+    return res
 
 
 
