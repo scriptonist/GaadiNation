@@ -45,11 +45,11 @@
             	                         </form>    
     			                    </div>
                                 </nav>
-                                <div class="row" style="margin-top: 3%; margin-left: 4%;">
+                                <div class="row" style="margin-top: 3%; margin-left: 2%;">
                                     <div class="col">
-                                         <a class="waves-effect waves-light btn-large"><i class="material-icons left">search</i>Find</a>
-                                         <a class="waves-effect waves-light btn-large"><i class="material-icons left">swap_horiz</i>Compare</a>
-                                         <a class="waves-effect waves-light btn-large"><i class="material-icons left">location_on</i>Locate</a>
+                                         <a class="waves-effect waves-light btn"><i class=" tiny material-icons left">search</i>Find</a>
+                                         <a class="waves-effect waves-light btn"><i class=" tiny material-icons  left">swap_horiz</i>Compare</a>
+                                         <a class="waves-effect waves-light btn"><i class=" tiny material-icons left">location_on</i>Locate</a>
                                     </div>
                                 </div>
                         </div>
