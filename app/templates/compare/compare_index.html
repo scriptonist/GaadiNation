@@ -1,108 +1,186 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Compare Cars</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="{{ url_for('static',filename='js/jquery-3.1.0.min.js') }}" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../static/normalize.css">
+  <link rel="stylesheet" href="../static/skeleton.css">
+<!-- Jquery CDN -->
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-top:40%;">
+			<form method="post" action="/compare/compare_display">
+			<div class="three columns">
+				<select id="choice1" name="choice1">
+					{% for i in manu %}
+					<option value="{{ i }}">{{ i }}</option>
+					{% endfor %}
+				</select>
+				<br>
+				<select id="list1" name="list1">
+					<option value="None" selected>Choose car</option>
+				</select>
+			</div>
+			<div class="three columns">
+				<select id="choice2" name="choice2">
+					{% for i in manu %}
+					<option value="{{ i }}">{{ i }}</option>
+					{% endfor %}
+				</select>
+				<br>
+				<select id="list2" name="list2">
+					<option value="None" selected>Choose car</option>
+				</select>
+			</div>
+			<div class="three columns">
+				<select id="choice3" name="choice3">
+					{% for i in manu %}
+					<option value="{{ i }}">{{ i }}</option>
+					{% endfor %}
+				</select>
+				<br>
+				<select id="list3" name="list3">
+					<option value="None" selected>Choose car</option>
+				</select>
+			</div>
+			<div class="three columns">
+				<select id="choice4" name="choice4">
+					{% for i in manu %}
+					<option value="{{ i }}">{{ i }}</option>
+					{% endfor %}
+				</select>
+				<br>
+				<select id="list4" name="list4">
+					<option value="None" selected>Choose car</option>
+				</select>
+			</div>
+			<center><input type="submit" value="Compare"></center>
+			</form>
+		</div>
+	</div>	
+	<script>
+	//Compare 1 
+		$(document).ready(function()
+		{	
+			$("#choice1").click(function()
+			{
+				var manufac=$("#choice1").val();
+				$.ajax({
+					url:"/compare/result/"+manufac,
+					success:function(opts)
+					{
+		
+						var opts=opts.split(',');
+						$("#list1").empty();
+						opts.shift();
+						opts.pop();
+						for (i=0;i<opts.length;i++)
+						{
+							$("#list1").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
+						}
+						//console.log(typeof opts);
+					
+					}
+			});
+			});
+		});
+		
 
-<body  class="">
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">GaadiNation</a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Recomend</a></li>
-                    <li><a href="#">Compare</a></li>
-                    <li><a href="#">Search</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="container ">
-        <div class="row section">
-         <h5 class="header">Car 1</h5>
-         <div class="card horizontal col s6">
-                <div class="input-field">
-                    <select>
-                        <option value="" disabled selected>Choose Brand</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                    
-                </div>
-                <div class="input-field col s6">
-                    <select>
-                        <option value="" disabled selected>Choose Car</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="row section">
-        <h5 class="header">Car 2</h5>
-            <div class="card horizontal col s6">
-                <div class="input-field ">
-                    <select>
-                        <option value="" disabled selected>Choose Brand</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                    
-                </div>
-                <div class="input-field col s6">
-                    <select>
-                        <option value="" disabled selected>Choose Car</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                   
-                </div>
-            </div>
-        </div>
-        <div class="row section">
-        <h5 class="header">Car 2</h5>
-            <div class="card horizontal col s6">
-                <div class="input-field ">
-                    <select>
-                        <option value="" disabled selected>Choose Brand</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                    
-                </div>
-                <div class="input-field col s6">
-                    <select>
-                        <option value="" disabled selected>Choose Car</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
+	//Compare 2
+
+		$(document).ready(function()
+		{	
+			$("#choice2").click(function()
+			{
+				var manufac=$("#choice2").val();
+				$.ajax({
+					url:"/compare/result/"+manufac,
+					success:function(opts)
+					{
+		
+						var opts=opts.split(',');
+						$("#list2").empty();
+						opts.shift();
+						opts.pop();
+						for (i=0;i<opts.length;i++)
+						{
+							$("#list2").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
+						}
+						//console.log(typeof opts);
+					
+					}
+			});
+			});
+		});
+		
+	//COmpare 3
+		$(document).ready(function()
+		{	
+			$("#choice3").click(function()
+			{
+				var manufac=$("#choice3").val();
+				$.ajax({
+					url:"/compare/result/"+manufac,
+					success:function(opts)
+					{
+		
+						var opts=opts.split(',');
+						$("#list3").empty();
+						opts.shift();
+						opts.pop();
+						for (i=0;i<opts.length;i++)
+						{
+							$("#list3").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
+						}
+						//console.log(typeof opts);
+					
+					}
+			});
+			});
+		});
+	//Compare 4
+		$(document).ready(function()
+		{	
+			$("#choice4").click(function()
+			{
+				var manufac=$("#choice4").val();
+				$.ajax({
+					url:"/compare/result/"+manufac,
+					success:function(opts)
+					{
+		
+						var opts=opts.split(',');
+						$("#list4").empty();
+						opts.shift();
+						opts.pop();
+						for (i=0;i<opts.length;i++)
+						{
+							$("#list4").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
+						}
+						//console.log(typeof opts);
+					
+					}
+			});
+			});
+		});
+	</script>
 </body>
-<script>
-$(document).ready(function() {
-    $('select').material_select();
-});
-</script>
-
 </html>
