@@ -44,7 +44,7 @@ def recomendation_result():
             conditions.append({"start_price": {'$gt': budget['cheap']}})
             conditions.append({"SeatCapacity": {'$gte': seatnumber[seatnumber.index(int(choices['seatnumber']))]}})
             conditions.append({"Mileage": {'$gte': use[choices['use']]}})
-        content=filter_by_many_values_perfect(conditions).limit(5)
+        content=filter_by_many_values_perfect(conditions).limit(4)
         return render_template("recomendation/findresult.html", content=content)
     else:
         return render_template('404.html')
