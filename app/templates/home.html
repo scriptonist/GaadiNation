@@ -57,6 +57,27 @@
             </ul>
         </div>
         </div>
+        <!-- WHat we do -->
+            <div class="row" style="margin-top:6%;">
+                <div class="col s12 m6 l3" style="margin-left: 36%;">
+                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>What We Solve</b></h3></div>  
+                </div>
+            </div> 
+        <!--End of What we do-->
+            <!-- Video Section-->
+                <center>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2" >Watch Me</a>
+                </center>
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                       <center>
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/l2WX7rutr-s" frameborder="0" allowfullscreen style="width: 100%;"></iframe>
+                       </center>
+                    </div>
+                </div>
+                <!--End Of Modal -->
+            <!-- End Of Video Section-->
     
             <!-- Section Of Features -->
             <!-- Find Car Feature -->
@@ -157,7 +178,11 @@
             $(document).ready(function(){
                 $('.scrollspy').scrollSpy();
             });
-               
+            
+            $(document).ready(function(){
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });  
            </script>
     </body>
 </html>
