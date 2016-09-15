@@ -6,9 +6,8 @@ import json
 location = Blueprint("location", __name__, url_prefix='/locate')
 
 
-googleGeocodeUrl = 'http://maps.googleapis.com/maps/api/geocode/json?'
-
 def get_coordinates(query, from_sensor=False):
+    googleGeocodeUrl = 'http://maps.googleapis.com/maps/api/geocode/json?'
     query = query.encode('utf-8')
     params = {
         'address': query,
