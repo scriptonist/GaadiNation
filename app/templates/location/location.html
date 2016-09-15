@@ -3,27 +3,27 @@
   <head>
   <!-- Title Of Page -->
             <title>GaadiNation</title>
-            
+
             <!-- Font Styles -->
             <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway" rel="stylesheet">
-            
+
             <!-- Compiled and minified CSS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-        
+
             <!-- Animation Css -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        
+
             <!--Let browser know website is optimized for mobile -->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+
             <!-- Icons Css -->
             <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            
+
             <!-- Jquery Library -->
             <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-   
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -44,10 +44,8 @@
       var map,lati,lngi;
       var infowindow;
 
-      
       function initMap() {
-        getLocation();
-        var pyrmont = {lat: {{lati}}, lng:{{lngi}} };
+        var pyrmont = {lat: {{lat}}, lng:{{lon}} };
 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
@@ -60,7 +58,7 @@
           location: pyrmont,
           radius: 500,
           type: ['car_dealer'],
-          keyword:"()"
+          keyword:"(car)"
         }, callback);
       }
 
@@ -84,6 +82,13 @@
           infowindow.open(map, this);
         });
       }
+      function initialize() {
+
+var input = document.getElementById('searchTextField');
+var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
   <body>
@@ -99,8 +104,23 @@
                 </div>
             </nav>
         </div>
-    <div id="map"></div>
-    
+    <div class="row" >
+
+      <div class="col s3">
+        <!-- Grey navigation panel -->
+          <form class="section" action="" method="post">
+              <input id="searchTextField" type="text" name="searchTextField" placeholder="Search for a location">
+          </form>
+      </div>
+
+      <div class="col s9">
+        <!-- Teal page content  -->
+          <div  id="map" style="width: 100%; height: 100%; position: absolute;"></div>
+      </div>
+
+    </div>
+
+
   </body>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PSY8gVhmCygadE7G_mfBncdvAr0U0nU&libraries=places&callback=initMap"></script>
 </html>
