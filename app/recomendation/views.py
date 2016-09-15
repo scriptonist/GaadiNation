@@ -4,6 +4,11 @@ recomendation = Blueprint("recomendation", __name__,
                           url_prefix='/recomendation')
 
 
+budget = {"cheap": 1000000, "affordable": 3000000, "luxury": 3000000}
+seatnumber = [2, 4, 5, 6, 7, 8]
+use = {"daily": 20, "weekly": 15, "occasionaly": 10}
+
+
 @recomendation.route('/', methods=['post', 'get'])
 def recomendation_steps():
     return render_template("recomendation/find.html")

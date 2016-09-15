@@ -3,30 +3,30 @@
     <head>
             <!-- Title Of Page -->
             <title>GaadiNation</title>
-
+            
             <!-- Font Styles -->
             <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Aladin|Alegreya+Sans+SC:100|Advent+Pro" rel="stylesheet">
-            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway|Varela+Round" rel="stylesheet">
+            
             <!-- Compiled and minified CSS -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
+        
             <!-- Animation Css -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
+        
             <!--Let browser know website is optimized for mobile -->
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+        
             <!-- Icons Css -->
             <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+            
             <!-- Jquery Library -->
             <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-
+            
     </head>
-    <body>
+    <body >
+        
         <!-- Search Bar Of Page-->
         <div class="slider" id="#top" >
             <ul class="slides">
@@ -36,31 +36,35 @@
                             <h1 style="font-family:Alegreya Sans SC;font-size:110px;margin-left:5%;margin-top:0%;">Gaadi<span style="color:#43C6DB";>Nation</span></h1>
                                  <nav class="white darken-2 center-align" style="width: 49%;margin-left:3%;margin-top:-2%;">
                                     <div class="nav-wrapper" >
-        			                     <form method="post" action="{{url_for('search.search_form')}}">
+        			                     <form method="post" action="">
             			                     <div class="input-field center-align z-depth-0" style="100%;">
-                			                     <input id="search_box_center_input" type="search" placeholder="Search Your Car" name="search_query" required />
+                			                     <input id="search" type="search" placeholder="Search Your Car" name="search_query" required />
                 			                         <label for="search"><i class="material-icons black-text text-darken-4">search</i></label>
                 			                             <i class="material-icons black-text text-darken-4">close</i>
             			                     </div>
-            	                         </form>
+            	                         </form>    
     			                    </div>
                                 </nav>
+                                <div class="row" style="margin-top: 3%; margin-left: 2%;">
+                                    <div class="col">
+                                         <a href="/recomendation/" class="waves-effect waves-light btn"><i class=" tiny material-icons left">search</i>Find</a>
+                                         <a href="/compare/" class="waves-effect waves-light btn"><i class=" tiny material-icons  left">swap_horiz</i>Compare</a>
+                                         <a href="/locate/" class="waves-effect waves-light btn"><i class=" tiny material-icons left">location_on</i>Locate</a>
+                                    </div>
+                                </div>
                         </div>
                 </li>
             </ul>
         </div>
         </div>
-
-
-
-
+    
             <!-- Section Of Features -->
             <!-- Find Car Feature -->
             <div class="row" style="margin-top:6%;">
                 <div class="col s12 m6 l3" style="margin-left: 36%;">
-                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Find Your Car</b></h3></div>
+                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Find Your Car</b></h3></div>  
                 </div>
-            </div>
+            </div> 
             <div class="row container">
                 <div class="col s3 m6 l3">
                     <div class="card white darken-1">
@@ -68,25 +72,25 @@
                             <img src="../static/images/find.jpg">
                         </div>
                     </div>
-                </div>
+                </div>  
                 <div class="col s5 m6 l5" style="margin-left:11%;margin-top:5%;">
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Choose Your Budget &#8377;</h4>
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Choose Your Preference</h4>
-                    <a href="#" class="waves-effect waves-light center-align btn-large" style="font-family:Alegreya Sans SC;"><b>Find</b></a>
+                    <a href="/recomendation/" class="waves-effect center-align waves-light btn-large" style="font-family:Alegreya Sans SC;"><b>Find</b></a>
                 </div>
             </div>
-
+            
             <!-- Compare Car Feature -->
             <div class="row" style="margin-top:6%;">
                 <div class="col s12 m6 l3" style="margin-left: 36%;">
-                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Compare Cars</b></h3></div>
+                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Compare Cars</b></h3></div>  
                 </div>
-            </div>
+            </div> 
             <div class="row container">
                 <div class="col s5 m6 l5" style="margin-left:33%;margin-top:5%;">
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Compare Your <b>4</b> Cars</h4>
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Get Your Best Car</h4>
-                    <a href="#" class="waves-effect center-align waves-light btn-large" style="font-family:Alegreya Sans SC;"><b>Compare</b></a>
+                    <a href="/compare/" class="waves-effect center-align waves-light btn-large" style="font-family:Alegreya Sans SC;"><b>Compare</b></a>
                 </div>
                 <div class="col s3 m6 l3">
                     <div class="card white darken-1">
@@ -94,15 +98,15 @@
                             <img src="../static/images/compare.png">
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
-
+    
             <!--Locate Dealer Feature-->
             <div class="row" style="margin-top:6%;">
                 <div class="col s12 m6 l3" style="margin-left: 36%;">
-                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Nearest Dealers</b></h3></div>
+                    <div class="header" style="font-family:Alegreya Sans SC"><h3 class="center-align"><b>Nearest Dealers</b></h3></div>  
                 </div>
-            </div>
+            </div> 
             <div class="row container">
                 <div class="col s3 m6 l3">
                     <div class="card white darken-1">
@@ -110,36 +114,34 @@
                             <img src="../static/images/location.png">
                         </div>
                     </div>
-                </div>
+                </div>  
                 <div class="col s5 m6 l5" style="margin-left:11%;margin-top:5%;">
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Type Your Location &#9992;</h4>
                     <h4 class="left-align" style="font-family:Alegreya Sans SC">Know Nearest Dealers</h4>
-                    <a href="#" class="waves-effect center-align waves-light btn-large" style="font-family:Alegreya Sans SC;"><b>Locate</b></a>
+                    <a href="/locate/" class="waves-effect center-align waves-light btn-large" style="font-family:Alegreya Sans SC;"><b>Locate</b></a>
                 </div>
             </div>
             <!-- End Of Features -->
-
+            
             <!-- Navigation Button -->
             <div class="row" style="margin-left:95%;">
                  <a href="#top" class="btn-floating btn-large waves-effect waves-light blue-grey darken-4"><i class="material-icons white-text">navigation</i></a>
             </div>
-
+            
             <!-- Footer Of Page -->
-            <footer class="page-footer blue-grey darken-4" style="margin-top:3%;">
+            <footer class="page-footer blue-grey darken-3" style="margin-top:3%;">
                 <div class="footer-copyright">
                     <div class="container ">
-                        <h5 style="font-family:Alegreya Sans SC;">&#169; 2016 GaadiNation, All rights reserved</h5>
-                            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                        <h5 style="font-family:Alegreya Sans SC;"><center>&#169; 2016 GaadiNation, All rights reserved</center></h5>
                     </div>
                 </div>
             </footer>
-
-
+      
+        
             <!-- Jquery Of Materialise -->
            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
            <script>
-
+            
               $(document).ready(function(){
                 $('.parallax').parallax();
                 $('.carousel.carousel-slider').carousel({full_width: true});
@@ -151,11 +153,11 @@
                     full_width: true,
                     height: 500});
             });
-
+            
             $(document).ready(function(){
                 $('.scrollspy').scrollSpy();
             });
-
+               
            </script>
     </body>
 </html>
