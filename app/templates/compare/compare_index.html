@@ -16,6 +16,8 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway|Varela+Round" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,30 +33,21 @@
 </style>
 <body >
 	
-		<div class="container">
-			<h5><a href="/">GaadiNation</a></h5>
+		<div class="row" style="">
+		
+            <button class="button-primary" style="background-color:#263238">Home</button>
+            <button class="button-primary" style="background-color:#263238">Locate</button>
+            <button class="button-primary" style="background-color:#263238">Find</button>
+
 		</div>
 		<div class="row container" >
-
-			<div class="six columns">
-				<a href="/recomendation/" style="display:inline-block" class="button">Find</a>
-				<a href="/compare/" style="display:inline-block" class="button">Compare</a>
-				<a href="/locate/" style="display:inline-block" class="button">Locate</a>
-				<a href="/home" style="display:inline-block" class="button">Home</a>
-			</div>
-			<div class="six columns">
-				<form action="{{url_for('search.search_form')}}" method="post">
-					<input type="text" name="search_query" placeholder="Search for a car">
-				</form>
-			</div>
 		
 		</div>
-		<hr>
 		<div class="container">
 		<div class="row">
 		
-		<h5>Compare Cars</h5>
-			<form method="post" action="/compare/compare_display" style='margin-top:4%'>
+		<h5><center style="font-family:Alegreya Sans SC;font-size:58px;"><font color="white">Compare Cars</font></center></h5>
+		<center><form method="post" action="/compare/compare_display" style="margin-top: 13%;">
 			<div class="three columns ">
 				<select id="choice1" name="choice1">
 					{% for i in manu %}
@@ -99,7 +92,7 @@
 					<option value="None" selected>Choose car</option>
 				</select>
 			</div>
-			<center><input type="submit" value="Compare"></center>
+		<center><input type="submit" class="button-primary" style="background-color:#263238;margin-top: 17%;"  value="Compare"></center>
 			</form>
 		</div>
 	</div>	
