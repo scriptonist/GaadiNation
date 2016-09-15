@@ -24,6 +24,11 @@
 <!-- Jquery CDN -->
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </head>
+<style>
+	.somewidth{
+		max-width: 80%;
+	}
+</style>
 <body>
 	
 		
@@ -43,51 +48,52 @@
 		
 		</div>
 		<hr>
-		<div class="row">
 		<div class="container">
+		<div class="row">
+		
 		<h5>Compare Cars</h5>
 			<form method="post" action="/compare/compare_display" style='margin-top:4%'>
-			<div class="three columns">
+			<div class="three columns ">
 				<select id="choice1" name="choice1">
 					{% for i in manu %}
 					<option value="{{ i }}">{{ i }}</option>
 					{% endfor %}
 				</select>
 				<br>
-				<select id="list1" name="list1">
+				<select id="list1" class="somewidth"name="list1">
 					<option value="None" selected>Choose car</option>
 				</select>
 			</div>
-			<div class="three columns">
+			<div class="three columns ">
 				<select id="choice2" name="choice2">
 					{% for i in manu %}
 					<option value="{{ i }}">{{ i }}</option>
 					{% endfor %}
 				</select>
 				<br>
-				<select id="list2" name="list2">
+				<select id="list2" class="somewidth"name="list2">
 					<option value="None" selected>Choose car</option>
 				</select>
 			</div>
-			<div class="three columns">
+			<div class="three columns ">
 				<select id="choice3" name="choice3">
 					{% for i in manu %}
 					<option value="{{ i }}">{{ i }}</option>
 					{% endfor %}
 				</select>
 				<br>
-				<select id="list3" name="list3">
+				<select id="list3" class="somewidth"name="list3">
 					<option value="None" selected>Choose car</option>
 				</select>
 			</div>
-			<div class="three columns">
+			<div class="three columns ">
 				<select id="choice4" name="choice4">
 					{% for i in manu %}
 					<option value="{{ i }}">{{ i }}</option>
 					{% endfor %}
 				</select>
 				<br>
-				<select id="list4" name="list4">
+				<select id="list4" class="somewidth"name="list4">
 					<option value="None" selected>Choose car</option>
 				</select>
 			</div>
