@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Your page title here :)</title>
+  <title>GaadiNation</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -19,15 +19,28 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="../static/normalize.css">
-  <link rel="stylesheet" href="../static/skeleton.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/normalize.css')}}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
 <!-- Jquery CDN -->
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row" style="margin-top:40%;">
-			<form method="post" action="/compare/compare_display">
+	
+		
+		<div class="row" style="margin-top:4%">
+
+			<div class="six columns">
+				<a href="/recomendation/" style="display:inline-block" class="button">Find</a>
+				<a href="/compare/" style="display:inline-block" class="button">Compare</a>
+				<a href="/locate/" style="display:inline-block" class="button">Locate</a>
+			</div>
+		
+		</div>
+		<hr>
+		<div class="row">
+		<div class="container">
+		<h5>Compare Cars</h5>
+			<form method="post" action="/compare/compare_display" style='margin-top:4%'>
 			<div class="three columns">
 				<select id="choice1" name="choice1">
 					{% for i in manu %}
