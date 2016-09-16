@@ -23,6 +23,9 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="{{url_for('static',filename='css/normalize.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  
+  <!--- Font awesome cdn CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- Jquery CDN -->
 	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 </head>
@@ -34,10 +37,7 @@
 <body style="background-color:#263238;">
 	
 		<div class="row" style="">
-		
-            <button class="button-primary" style="background-color:#263238"><a href="/home">Home</a></button>
-            <button class="button-primary" style="background-color:#263238"><a href="/locate">Locate</a></button>
-            <button class="button-primary" style="background-color:#263238"><a href="/recomendation">Find</a></button>
+
 
 		</div>
 		<div class="row container" >
@@ -94,8 +94,14 @@
 			</div>
 		<center><input type="submit" class="button-primary" style="background-color:#263238;margin-top: 17%;"  value="Compare"></center>
 			</form>
+			<div>
+				<a href="/home"><i class="fa fa-home fa-2x"></i></a>
+			</div>	
 		</div>
 	</div>	
+	<div>
+		<a href="/home"><i class="fa fa-home fa-3x" style="float: right;margin-top: 16%;"></i></a>
+	</div>
 	<script>
 	//Compare 1 
 		$(document).ready(function()
