@@ -4,15 +4,12 @@ import json,ast
 
 catalog = Blueprint("catalog", __name__, url_prefix='/catalog')
 
-@catalog.route('/', defaults={'filters': None},methods=["POST","GET"])
-@catalog.route('/<filters>', methods=["POST", "GET"])
-def compare_index(filters=None):
-    if request.method == "GET" and filters is None:
+@catalog.route('/',methods=["POST","GET"])
+def compare_index():
+    if request.method == "GET":
         content = filter_by_many_values_perfect()
-        return render_template("catalog/catalog_index.html", result=content)
+        return render_template("catalog/mycatalog.html", result=content)
     else:
-        filters = list(ast.literal_eval(filters))
-        print(filters)
-        new_content = filter_by_many_values_perfect(filters)
-        return render_template("catalog/catalog_index.html",result=new_content)
-        
+        print(request.form)
+        new_content = filter_by_many_values_perfect()
+        return render_template("catalog/mycatalog.html",result=new_content)

@@ -24,6 +24,7 @@
             <!-- Jquery Library -->
             <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
             <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -113,7 +114,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
       <div class="col s3">
         <!-- Grey navigation panel -->
-          <form class="section" action="" method="post">
+          <form id="form" class="section" action="" method="post">
               <input id="searchTextField" type="text" name="searchTextField" placeholder="Search for a location">
           </form>
       </div>
@@ -127,5 +128,22 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
   </body>
+  <script>
+    $('#form').on('submit',function(e){
+          e.preventDefault();
+          var geocoder = new google.maps.Geocoder();
+                var address =$('#searchTextField').val();
+
+                geocoder.geocode( { 'address': address}, function(results, status) {
+
+                if (status == google.maps.GeocoderStatus.OK) {
+                  var latitude = results[0].geometry.location.lat();
+                  var longitude = results[0].geometry.location.lng();
+                  window.location = "/locate/"+latitude+'/'+longitude
+                  }
+                });
+
+          });
+  </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5PSY8gVhmCygadE7G_mfBncdvAr0U0nU&libraries=places&callback=initMap"></script>
 </html>
