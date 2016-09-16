@@ -1,35 +1,23 @@
- var filters = {"brand":[]};
- function sendData() {
-
-    $.ajax({
-        url: '/catalog/',
-        type: 'POST',
-        data: JSON.stringify(filters),
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        async: true,
-        success: function(content) {
-            console.log(content);
-        }
-    });
+ 
+ function sendData(filters) {
+    console.log(filters);
+    window.location = "/catalog/"+filters.join(",");
  }
 
 $(document).ready(function(){
 
-
+    var filters = Array();
     $('input:checkbox').click(function(){
         var id = $(this).attr('id');
         if($(this).attr('class') === "brand"){
-            filters.brand.push(id);
-            console.log(filters);
-
+            filters.push(JSON.stringify({"brand":id}));
         }
 
     });
      $('#apply_filter').click(function(){
-        sendData();
+        sendData(filters);
      });
       $('#apply_filter1').click(function(){
-        sendData();
+        sendData(filters);
      });
 });
