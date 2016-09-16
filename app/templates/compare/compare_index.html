@@ -32,20 +32,20 @@
 	}
 </style>
 <body style="background-color:#263238;">
-	
+
 		<div class="row" style="">
-		
-            <button class="button-primary" style="background-color:#263238"><a href="/home">Home</a></button>
-            <button class="button-primary" style="background-color:#263238"><a href="/locate">Locate</a></button>
-            <button class="button-primary" style="background-color:#263238"><a href="/recomendation">Find</a></button>
+
+            <a href="/home"><button class="button-primary" style="background-color:#263238">Home</button></a>
+            <a href="/locate"><button class="button-primary" style="background-color:#263238">Locate</button></a>
+            <a href="/recomendation"><button class="button-primary" style="background-color:#263238">Find</button></a>
 
 		</div>
 		<div class="row container" >
-		
+
 		</div>
 		<div class="container">
 		<div class="row">
-		
+
 		<h5><center style="font-family:Alegreya Sans SC;font-size:58px;"><font color="white">Compare Cars</font></center></h5>
 		<center><form method="post" action="/compare/compare_display" style="margin-top: 13%;">
 			<div class="three columns ">
@@ -95,11 +95,11 @@
 		<center><input type="submit" class="button-primary" style="background-color:#263238;margin-top: 17%;"  value="Compare"></center>
 			</form>
 		</div>
-	</div>	
+	</div>
 	<script>
-	//Compare 1 
+	//Compare 1
 		$(document).ready(function()
-		{	
+		{
 			$("#choice1").click(function()
 			{
 				var manufac=$("#choice1").val();
@@ -107,7 +107,7 @@
 					url:"/compare/result/"+manufac,
 					success:function(opts)
 					{
-		
+
 						var opts=opts.split(',');
 						$("#list1").empty();
 						opts.shift();
@@ -117,17 +117,17 @@
 							$("#list1").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
 						}
 						//console.log(typeof opts);
-					
+
 					}
 			});
 			});
 		});
-		
+
 
 	//Compare 2
 
 		$(document).ready(function()
-		{	
+		{
 			$("#choice2").click(function()
 			{
 				var manufac=$("#choice2").val();
@@ -135,7 +135,7 @@
 					url:"/compare/result/"+manufac,
 					success:function(opts)
 					{
-		
+
 						var opts=opts.split(',');
 						$("#list2").empty();
 						opts.shift();
@@ -145,15 +145,15 @@
 							$("#list2").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
 						}
 						//console.log(typeof opts);
-					
+
 					}
 			});
 			});
 		});
-		
+
 	//COmpare 3
 		$(document).ready(function()
-		{	
+		{
 			$("#choice3").click(function()
 			{
 				var manufac=$("#choice3").val();
@@ -161,7 +161,7 @@
 					url:"/compare/result/"+manufac,
 					success:function(opts)
 					{
-		
+
 						var opts=opts.split(',');
 						$("#list3").empty();
 						opts.shift();
@@ -171,14 +171,14 @@
 							$("#list3").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
 						}
 						//console.log(typeof opts);
-					
+
 					}
 			});
 			});
 		});
 	//Compare 4
 		$(document).ready(function()
-		{	
+		{
 			$("#choice4").click(function()
 			{
 				var manufac=$("#choice4").val();
@@ -186,7 +186,7 @@
 					url:"/compare/result/"+manufac,
 					success:function(opts)
 					{
-		
+
 						var opts=opts.split(',');
 						$("#list4").empty();
 						opts.shift();
@@ -196,7 +196,7 @@
 							$("#list4").append('<option value='+opts[i]+'>'+opts[i]+'</option>')
 						}
 						//console.log(typeof opts);
-					
+
 					}
 			});
 			});
