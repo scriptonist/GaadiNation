@@ -8,7 +8,7 @@ catalog = Blueprint("catalog", __name__, url_prefix='/catalog')
 def compare_index():
     if request.method == "GET":
         content = filter_by_many_values_perfect()
-        return render_template("catalog/mycatalog.html", result=content)
+        return render_template("catalog/catalog_index.html", result=content)
     else:
         print(request.form)
         new_content = filter_by_many_values_perfect()
