@@ -57,9 +57,9 @@ def filter_by_many_values_perfect(conditions=[]):
     """
     collection = init_db()
     if not conditions:
-        return collection.find()
+        return collection.find().sort("carname",1)
     else:
-        res = collection.find({"$and": conditions})
+        res = collection.find({"$and": conditions}).sort("carname",1)
         return res
 
 def filter_by_args(brand="",prices="",bodytype=""):
