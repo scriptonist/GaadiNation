@@ -273,21 +273,32 @@
     <div>
      
       {% for car in result %}
-        <a href="{{url_for('search.get_car_details_by_name',carname=car['carname'])}}">
+       
          <div style="display:inline-block;width:30%;margin-right:3%;margin-top:4%">
+          <a href="{{url_for('search.get_car_details_by_name',carname=car['carname'])}}">
          <div>
             <img  src="{{ car['image'] }}" style="max-width: 100%"/>
           </div>
             <p class='center-align'>{{car['carname']}}</p>
-         </div>
+         
         </a>
+        <div class='center-align'>
+        <input  type="checkbox"  id="{{car['carname']}}" value="" class="addToCompare" >
+        <label for="{{car['carname']}}"><h6>Add to Compare</h6></label>
+        </div>
+        </div>
       {% endfor %}
          
       </div>
     </div>
 
   </div>
-
+<div class="fixed-action-btn" style="bottom:45px;right:24px;">
+        
+        <button id="compareButton" class="btn-floating btn-large">
+            <i class="material-icons">swap_horiz</i>
+        </button>
+    </div>
 
   <!-- Footer Of Page -->
   <footer class="page-footer blue-grey darken-4" style="margin-top:3%;">
@@ -335,7 +346,7 @@
     });
   </script>
   <script src="{{ url_for('static',filename='js/catalog/getfilter.js')}}"></script>
-
+  <script src="{{url_for('static',filename='js/addtocompare.js') }}"></script>
 
 
 
@@ -349,3 +360,5 @@
 </head>
 
 </html>
+
+
