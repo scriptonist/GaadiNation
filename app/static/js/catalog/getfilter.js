@@ -1,23 +1,53 @@
- 
- function sendData(filters) {
-    console.log(filters);
-    window.location = "/catalog/"+filters.join(",");
- }
+brands = Array();
+price  = Array();
+bodytype = Array();
 
-$(document).ready(function(){
+$('.brand').click(function(){
+  if($(this).is(":checked")){
+    brands.push($(this).val())
+    
+  }
+  else{
+    var removeItem = $(this).val();
 
-    var filters = Array();
-    $('input:checkbox').click(function(){
-        var id = $(this).attr('id');
-        if($(this).attr('class') === "brand"){
-            filters.push(JSON.stringify({"brand":id}));
-        }
-
+    brands = jQuery.grep(brands, function(value) {
+    return value != removeItem;
     });
-     $('#apply_filter').click(function(){
-        sendData(filters);
-     });
-      $('#apply_filter1').click(function(){
-        sendData(filters);
-     });
+  }
+ $("input[id=brand_input_box]").attr("value",brands.join(","));
+  
+});
+
+$('.price').click(function(){
+  console.log("clicked");
+  if($(this).is(":checked")){
+    price.push($(this).val())
+    
+  }
+  else{
+    var removeItem = $(this).val();
+
+    price = jQuery.grep(price, function(value) {
+    return value != removeItem;
+    });
+  }
+ $("input[id=price_input_box]").attr("value",price.join(","));
+  
+});
+
+$('.bodytype').click(function(){
+  console.log("clicked");
+  if($(this).is(":checked")){
+    bodytype.push($(this).val())
+    
+  }
+  else{
+    var removeItem = $(this).val();
+
+    bodytype = jQuery.grep(bodytype, function(value) {
+    return value != removeItem;
+    });
+  }
+ $("input[id=bodytype_input_box]").attr("value",bodytype.join(","));
+  
 });
