@@ -19,7 +19,7 @@ $('.brand').click(function(){
 });
 
 $('.price').click(function(){
-  console.log("clicked");
+
   if($(this).is(":checked")){
     price.push($(this).val())
     
@@ -36,7 +36,6 @@ $('.price').click(function(){
 });
 
 $('.bodytype').click(function(){
-  console.log("clicked");
   if($(this).is(":checked")){
     bodytype.push($(this).val())
     
@@ -50,4 +49,18 @@ $('.bodytype').click(function(){
   }
  $("input[id=bodytype_input_box]").attr("value",bodytype.join(","));
   
+});
+
+var fl = 1;
+$("#showmorebutton").click(function(){
+  if(fl === 1){
+    $('#hidden_brands').removeClass('hide');
+    $(this).html("show less");
+    fl = 0;
+  }
+  else{
+    fl = 1;
+    $('#hidden_brands').addClass('hide');
+    $(this).html("show more");
+  }
 });
