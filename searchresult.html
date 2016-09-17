@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+            <!-- Title Of Page -->
+            <title>GaadiNation</title>
+            
+            <!-- Font Styles -->
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100|Raleway" rel="stylesheet">
+            
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        
+            <!-- Animation Css -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        
+            <!--Let browser know website is optimized for mobile -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+            <!-- Icons Css -->
+            <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            
+            <!-- Jquery Library -->
+            <script   src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+            
+    </head>
+    <style>
+       
+    </style>
+    <body>
+        
+        <!-- Top NavBar -->
+        <div>
+            <nav>
+                <div class="navbar-fixed blue-grey darken-3">
+                    <a href="../templates/home" class="brand-logo center" style="font-family:Alegreya Sans SC;font-size:58px;">Gaadi<span style="color:#43C6DB";>Nation</span></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul id="nav-mobile"  class="left hide-on-med-and-down">
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/home">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/compare">COMPARE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/locate">LOCATE</a></b></li>
+                        </ul>
+    			 </div>
+                         <ul id="mobile-demo"  class="side-nav">
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/">FIND</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">COMPARE</a></b></li>
+                            <li style="font-family:Raleway;font-size:50px;"><b><a href="">LOCATE</a></b></li>
+                        </ul>
+                        <form method="post" action="{{url_for('search.search_form')}}">
+            			     <div class="input-field center-align z-depth-0" style="width:18%;margin-top:3%">
+                			     <input id="search_query" type="search" placeholder="Search Your Car" name="search_query" required />
+                			         <label for="search_query"><i class="material-icons black-text text-darken-4">search</i></label>
+            			     </div>
+            	       </form>
+                </div>
+            </nav>
+        </div>
+        <!-- End Of NavBar-->
+        <h5 class="header align center">Results</h5>
+        <div class="container">
+        <div class="row">
+        <!-- CARD RESULTS -->
+{% for car in result %}
+            
+    <div class="col s4 m4" >
+        <div class="card large">
+            <div class="card-image waves-effect waves-block waves-light">
+                <a href="{{ url_for('search.get_car_details_by_name',carname=car['carname']) }}"><img class="activator" src="{{ car['image'] }}"></a>
+            </div>
+            <div class="card-content" >
+                <span class="card-title activator grey-text text-darken-4"><h5><a href="{{ url_for('search.get_car_details_by_name',carname=car['carname']) }}">{{ car['carname'] }}</a></h5><h6>{{ car['Price'] }}</h6></span>
+                <p>Fuel Type: {{ car['FuelType'] }}<br>Seat Capacity: {{ car['SeatCapacity'] }}</p>
+                <input type="checkbox"  id="{{car['carname']}}" value="" class="addToCompare" >
+                <label for="{{car['carname']}}"><h6>Add to Compare</h6></label>
+            </div>
+        </div>
+
+
+    </div>
+                 
+
+
+{% endfor %}
+</div>
+    <div class="fixed-action-btn" style="bottom:45px;left:24px;">
+        
+        <button id="compareButton" class="btn-floating btn-large">
+            <i class="material-icons">swap_horiz</i>
+        </button>
+    </div>
+    <!-- END OF CARD RESULTS-->
+             </div>
+    </div>
+        
+
+    
+    
+    
+    
+        
+        
+                    
+            <!-- Navigation Button -->
+            <div class="row" style="margin-left:95%;">
+                 <a href="#top" class="btn-floating btn-large waves-effect waves-light blue-grey darken-4"><i class="material-icons white-text">navigation</i></a>
+            </div>
+    <!-- End Of Navigation -->
+        
+       
+    <!-- Footer Of Page -->
+
+            <footer class="page-footer blue-grey darken-4" style="margin-top:3%;">
+                <div class="footer-copyright">
+                    <div class="container ">
+                        <h5 style="font-family:Alegreya Sans SC;"><center>&#169; 2016 GaadiNation, All rights reserved</center></h5>
+                            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    </div>
+                </div>
+            </footer>
+    <!-- End Of Footer-->
+        
+        
+        
+        
+         <!-- Jquery Of Materialise -->
+           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+           <script>
+            
+              $(document).ready(function(){
+                $('.parallax').parallax();
+                $('.carousel.carousel-slider').carousel({full_width: true});
+            });
+
+             $(document).ready(function(){
+                $('.slider').slider({
+                    indicators: false,
+                    full_width: true,
+                    height: 500});
+            });
+            
+            $(document).ready(function(){
+                $('.scrollspy').scrollSpy();
+            });
+               
+            $( document ).ready(function(){
+                $(".button-collapse").sideNav();
+            });
+            
+            $(document).ready(function(){
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+               
+           </script> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+    </head>
+</html>
+<script>
+    compare = Array();
+    $('.addToCompare').click(function(){
+        if(compare.length < 4){
+                if($.inArray($(this).attr('id'),compare) == -1){
+                    compare.push($(this).attr('id'));
+                    Materialize.toast('Car Added to Compare List', 4000,'rounded')
+                }
+                else{
+                    compare.splice( $.inArray($(this).attr('id'),compare) ,1 );
+                    Materialize.toast('Car Removed from Compare List', 4000,'rounded')
+                }
+            }
+        else
+            Materialize.toast('You Can Only Compare 4 Cars at a time', 4000,'rounded')
+        console.log(compare);
+    });
+    $('#compareButton').click(function(){
+        window.location = "/compare/compare_display/"+compare.join(',');
+    });
+</script>
