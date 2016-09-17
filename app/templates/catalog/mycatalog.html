@@ -47,7 +47,18 @@
   <!-- Navigation Bar  -->
   <div class="row">
 
-    <div class="col s12 m4 l3">
+    <div class="col s12 m3 l2">
+     <h6 class="header center-align">Filters</h6>
+     <form action="" method="post">
+          <input name="brand" type="hidden" id="brand_input_box" />   
+          <input name="price" type="hidden" id="price_input_box" /> 
+          <input name="bodytype" type="hidden" id="bodytype_input_box" />   
+        
+        <div class="fixed-action-btn" style="bottom:45px;left:15px;">
+          <input class="waves-effect waves-light btn " type="submit" value="Apply Filters" />
+        </div>
+      </form>
+     <hr>
           <!-- Brand Filter Start  -->
         <section id="brand">
           <h6 class="header">Brand</h6>
@@ -165,6 +176,7 @@
         
         <!-- Price Filter Start -->
         <section id="price">
+        <hr>
           <h6 class="header">Price</h6>
           <hr />
           <p>
@@ -201,6 +213,7 @@
 
         <!-- BodyType Filter Start -->
           <section id="BodyType">
+          <hr>
           <h6 class="header">BodyType</h6>
           <hr />
           <p>
@@ -251,37 +264,25 @@
         </section>
         <!-- BodyType Filter end -->
 
-        <form action="" method="post">
-          <input name="brand" type="hidden" id="brand_input_box" />   
-          <input name="price" type="hidden" id="price_input_box" /> 
-          <input name="bodytype" type="hidden" id="bodytype_input_box" />   
         
-        <section>
-          <input class="waves-effect waves-light btn" type="submit" value="Apply" />
-        </section>
-      </form>
 
     </div>
 
-    <div class="col s12 m8 l9">
-
+    <div class="col s12 m9 l10" style="margin-top:4%" >
+    <div>
+     
       {% for car in result %}
-      <table style="display:inline-block">
-        <tbody>
-          <tr>
-            <td class="center-align" ><img src="{{car['image']}}" /></td>
-          </tr>
-          <tr>
-              <td class="center-align" >{{car['carname']}}</td>
-          </tr>
-          <t>
-            <td class="center-align" >{{car['Price']}}</td>
-          </tr >
-        </tbody>
-      </table>
-
+        <a href="{{url_for('search.get_car_details_by_name',carname=car['carname'])}}">
+         <div style="display:inline-block;width:30%;margin-right:3%;margin-top:4%">
+         <div>
+            <img  src="{{ car['image'] }}" style="max-width: 100%"/>
+          </div>
+            <p class='center-align'>{{car['carname']}}</p>
+         </div>
+        </a>
       {% endfor %}
-
+         
+      </div>
     </div>
 
   </div>
