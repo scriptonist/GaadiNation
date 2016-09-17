@@ -28,7 +28,7 @@ def recomendation_result():
     form = request.form
     choices = {}
     conditions = []
-    if request.method == "POST":
+    if request.method == "POST" and len(form) == 3:
         for key in form.keys():
             k = key.split(":")
             choices[k[0]] = k[1]
@@ -47,4 +47,4 @@ def recomendation_result():
         content=filter_by_many_values_perfect(conditions).limit(4)
         return render_template("recomendation/findresult.html", content=content)
     else:
-        return render_template('404.html')
+        return render_template('recomendation/noresult.html')
