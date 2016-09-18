@@ -14,7 +14,7 @@ def find_by_car_name(name):
     """
     collection = init_db()
     res = collection.find({"$text": {"$search": name}}, {
-                          "score": {"$meta": "textScore"}}).limit(8).sort([
+                          "score": {"$meta": "textScore"}}).sort([
                               ("score", {"$meta": "textScore"})
                           ])
     return res
