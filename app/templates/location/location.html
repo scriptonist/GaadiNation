@@ -103,6 +103,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             <li style="font-family:Raleway;font-size:50px;"><b><a href="/locate/">LOCATE</a></b></li>
                            <li style="font-family:Raleway;font-size:50px;"><b><a href="/catalog">CATALOG</a></b></li>
                         </ul>
+                         <ul id="nav-mobile"  class="right hide-on-med-and-down">
+                             <li> <form method="post" action="{{url_for('search.search_form')}}">
+                                
+                            
+                                 <input id="search_query" type="search" placeholder="Search Your Car" name="search_query" required />
+                               
+                             
+                       </form></li>    
+                        </ul>
                 </div>
                 <ul id="mobile-demo"  class="side-nav">
                             <li style="font-family:Raleway;font-size:50px;"><b><a href="/recomendation">FIND</a></b></li>
