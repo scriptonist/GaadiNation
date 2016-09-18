@@ -70,15 +70,7 @@
         <div class="container">
         <div class="row">
 
-        <!-- CARD RESULTS -->
-{%if result is not none %}
-<div class="valign-wrapper">
-     <blockquote class="valign">
-      Soory we Didn't Find Any results !
-    </blockquote>
-          
-</div>
-{% else %}
+
 
 {% for car in result %}
             
@@ -100,8 +92,17 @@
                  
 
 
+
+{%else %}
+       
+<div class="valign-wrapper">
+     <blockquote class="valign">
+      Soory we Didn't Find Any results !
+    </blockquote>
+          
+</div>
+
 {% endfor %}
-{%endif %}
 </div>
 </div>
     <div class="fixed-action-btn" style="bottom:45px;left:24px;">
