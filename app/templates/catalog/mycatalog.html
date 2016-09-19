@@ -42,6 +42,13 @@
           <li style="font-family:Raleway;font-size:50px;"><b><a href="/locate/">LOCATE</a></b></li>
           <li style="font-family:Raleway;font-size:50px;"><b><a href="/catalog">Catalog</a></b></li>
         </ul>
+        <ul id="nav-mobile"  class="right hide-on-med-and-down">
+                            <form method="post" action="{{ url_for('search.search_form')}}">
+                               
+                                    <input id="search" name="search_query" type="search" placeholder="Search Your Car" required>
+    
+                            </form>
+        </ul>
       </div>
     </nav>
   </div>
